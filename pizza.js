@@ -1,15 +1,13 @@
 class pizza{
   //type constructor below
-constructor(s, mt, vt){
-  this.size = s;
-  this.meatToppings = mt;
-  this.veggieToppings = vt;
-  var size = ["S","M","L","XL"];
-  var meatToppings = [];
-  var veggieToppings = [];
-}
-
-
+  constructor(s, mt, vt){
+    this.size = s;
+    this.meatToppings = mt;
+    this.veggieToppings = vt;
+    var size = ["S","M","L","XL"];
+    var meatToppings = [];
+    var veggieToppings = [];
+  }
   //type instance functions below
   sizeCost(){
     if(this.size[0]){
@@ -29,19 +27,23 @@ constructor(s, mt, vt){
       return price;
     }
   }
-toppingCost(top){
-  if(top == meat){
-    meat * 0.99;
-    return meat;
+  toppingCost(top){
+    if(top == meat){
+      meat * 0.99;
+      return meat;
+    }
+    if(top == veggie){
+      veggie * 0.50;
+      return veggie;
+    }
   }
-  if(top == veggie){
-    veggie * 0.50;
-    return veggie;
+  price(){
+    total = price + meat + veggie;
+    return total;
   }
-}
-
-
   //type class functions below
-
-
+  static promotionalDeal(pizza,percent){
+    total = pizza * percent / 100;
+    return total;
+  }  
 }
